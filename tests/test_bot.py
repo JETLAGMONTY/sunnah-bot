@@ -323,6 +323,34 @@ def test_quiet_tick_does_not_write_the_store(bristol):
     assert bristol.store.saves == saves
 
 
+LEGACY = {"chat_id": 9, "lang": "en", "city": "Bristol", "country": "UK", "lat": None, "lng": None,
+          "method": 2, "school": 0, "offsets": {}, "tz": "Europe/London", "tz_fixed": False,
+          "paused": False, "blocked": False, "sent_today": [], "sent_date": "2026-09-04"}
+
+
+def test_paused_legacy_user_still_gets_times():
+    e = Env(data={"last_update_id": 0, "users": {"9": {**LEGACY, "paused": True}}})
+    assert "Fajr" in e.say("/times", chat=9)
+    assert "Rabīʿ al-awwal" in e.say("/fasting", chat=9)
+
+
+def test_unknown_legacy_city_is_looked_up_once():
+    e = Env(data={"last_update_id": 0, "users": {"9": {**LEGACY, "city": "Xyzzy", "country": ""}}})
+    e.bot.tick()
+    e.when += dt.timedelta(minutes=11)
+    e.bot.tick()
+    assert e.http.count(GEOCODE) == 1
+
+
+def test_reminders_sent_by_the_old_bot_are_not_repeated_after_deploy():
+    # origin/main called the Friday last-hour reminder "friday_dua".
+    e = Env(when=dt.datetime(2026, 9, 4, 18, 52, tzinfo=LONDON),
+            data={"last_update_id": 0, "users": {"9": {**LEGACY, "lat": 51.46, "lng": -2.6,
+                                                         "sent_today": ["friday_dua"]}}})
+    e.bot.tick()
+    assert e.tg.sent == []
+
+
 def test_old_sent_keys_are_pruned(bristol):
     bristol.user()["sent"] = ["2026-08-01:morning"]
     bristol.bot.tick()

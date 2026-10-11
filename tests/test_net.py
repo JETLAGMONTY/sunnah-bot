@@ -22,6 +22,13 @@ class Echo(BaseHTTPRequestHandler):
             return self._reply(400, {"code": 400, "data": "invalid coordinates"})
         if path.path == "/html":
             return self._reply(502, "<html>Bad gateway</html>")
+        if path.path == "/short":   # connection drops mid-body
+            self.send_response(200)
+            self.send_header("Content-Length", "100")
+            self.end_headers()
+            self.wfile.write(b'{"partial":')
+            self.close_connection = True
+            return
         self._reply(200, {k: v[0] for k, v in parse_qs(path.query).items()})
 
     def do_POST(self):
@@ -51,6 +58,11 @@ def test_error_status_with_json_body_returns_the_body(base):
 def test_error_status_without_json_raises(base):
     with pytest.raises(net.NetError):
         net.get_json(base + "/html", {})
+
+
+def test_truncated_response_raises_net_error(base):
+    with pytest.raises(net.NetError):
+        net.get_json(base + "/short", {})
 
 
 def test_post_json_sends_json(base):

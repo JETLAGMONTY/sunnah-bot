@@ -141,8 +141,9 @@ class Bot:
         if u.get("lat") is None and u.get("city"):
             key = ("geo", u["city"], u.get("country"))
             if self.wall() - self.failed.get(key, -RETRY_SECONDS) >= RETRY_SECONDS:
-                if self.set_city(u, u["city"], u.get("country") or "") is None:
-                    self.failed[key] = self.wall()
+                found = self.set_city(u, u["city"], u.get("country") or "")
+                if not found:   # not found: don't ask again this run; search failed: retry later
+                    self.failed[key] = float("inf") if found is None else self.wall()
         d = self.day(u, self.now().astimezone(dt.timezone.utc).date())
         if d and d.tz != u.get("tz"):
             u["tz"] = d.tz
@@ -166,10 +167,10 @@ class Bot:
     # ---------------------------------------------------------------- prayer times message
     def times_message(self, u):
         lang = u["lang"]
+        self.ensure_place(u)
         if u.get("lat") is None:
             return tr(lang, "Set your location first: /location (most accurate) or `/city Cairo, Egypt`",
                       "حدد موقعك أولًا: /location (الأدق) أو `/city Cairo, Egypt`")
-        self.ensure_place(u)
         now = self.local_now(u)
         d = self.day(u, now.date())
         if not d:
@@ -356,7 +357,8 @@ class Bot:
                     "• *الإثنين والخميس* — كان النبي ﷺ يصومهما. (الترمذي)"),
                  tr(lang, "• The *3 White Days* — 13th, 14th, 15th of each Hijri month. (Bukhari)",
                     "• *الأيام البيض* — ١٣ و١٤ و١٥ من كل شهر هجري. (البخاري)")]
-        d = self.day(u, self.local_now(u).date()) if u.get("lat") is not None else None
+        self.ensure_place(u)
+        d = self.day(u, self.local_now(u).date())
         if d:
             lines.append(tr(lang, "\n_Today is ", "\n_اليوم ") + c.hijri_label(d.hijri, lang) + "._")
             occ = c.occasion_message(c.occasion_keys(d.hijri["day"], d.hijri["month"]), d.hijri, lang)

@@ -74,6 +74,15 @@ That's it — the bot now runs 24/7 for free. You can turn off your PC.
 
 ---
 
+## Upgrading from the single-file bot
+
+The bot is now the `sunnah/` package; `sunnah_bot.py` only starts it, so the
+start command stays the same. Users and their settings carry over from the
+database unchanged. The operator variables `CHAT_ID`, `CITY`, `COUNTRY`,
+`LATITUDE`, `LONGITUDE`, `PRAYER_METHOD`, `ASR_SCHOOL` and `TIMEZONE` are no
+longer read — set your own location in Telegram (`/location`) and keep
+`DATABASE_URL` so it survives redeploys. You can delete those variables.
+
 ## Updating later
 
 Change `sunnah_bot.py`, push to GitHub → Render redeploys automatically.

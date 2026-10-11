@@ -40,7 +40,7 @@ def events(u, date, days, times):
         for name in PRAYERS:
             out.append(("salah_" + name, t[name], c.salah_reminder(name, t[name].astimezone(tz).strftime("%H:%M"), lang)))
         if friday:
-            out.append(("friday_hour", t["Maghrib"] - dt.timedelta(hours=1), c.friday_hour(lang)))
+            out.append(("friday_dua", t["Maghrib"] - dt.timedelta(hours=1), c.friday_hour(lang)))
         night = c.qadr_night(today.hijri["day"], today.hijri["month"])
         if night:
             out.append(("qadr", t["Maghrib"], c.qadr_message(night, lang)))

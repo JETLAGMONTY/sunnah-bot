@@ -102,7 +102,7 @@ def test_odd_night_reminder_at_maghrib():
 
 def test_friday_reminders():
     assert list(due(user(), london(2026, 9, 4, 9, 30))) == ["2026-09-04:jumuah"]
-    assert list(due(user(), london(2026, 9, 4, 18, 50))) == ["2026-09-04:friday_hour"]   # Maghrib 19:50
+    assert list(due(user(), london(2026, 9, 4, 18, 50))) == ["2026-09-04:friday_dua"]   # Maghrib 19:50
 
 
 def test_isha_after_midnight_belongs_to_the_previous_day():

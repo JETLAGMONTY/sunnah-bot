@@ -1,4 +1,5 @@
 """JSON over HTTP with the standard library only (no third-party client)."""
+import http.client
 import json
 import urllib.error
 import urllib.parse
@@ -19,7 +20,7 @@ def _open(req, timeout):
             body = r.read()
     except urllib.error.HTTPError as e:
         body = e.read()
-    except (OSError, ValueError) as e:
+    except (OSError, ValueError, http.client.HTTPException) as e:
         raise NetError(type(e).__name__) from None   # not str(e): URLs may carry a token
     try:
         return json.loads(body)
