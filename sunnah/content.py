@@ -91,7 +91,7 @@ TIPS = [
 
 
 def tip(i, lang):
-    return "🌿 " + tr(lang, *TIPS[i % len(TIPS)])
+    return tr(lang, *TIPS[i % len(TIPS)])
 
 
 def dua(i, lang):
@@ -357,7 +357,8 @@ def fast_eve_message(keys, hijri, lang):
 
 def qadr_message(night, lang):
     return tr(lang,
-              f"✨ *Tonight is the {night}th night of Ramadan* — seek Laylat al-Qadr in the odd nights of the "
+              f"✨ *Tonight is the {night}{ {1: 'st', 3: 'rd'}.get(night % 10, 'th') } night of Ramadan* — "
+              "seek Laylat al-Qadr in the odd nights of the "
               "last ten. (Bukhari)\n\nPray, read Qur'an, and say: _Allahumma innaka 'afuwwun tuhibbul-'afwa "
               "fa'fu 'anni_ — O Allah, You are Pardoning and love to pardon, so pardon me. (Tirmidhi)",
               f"✨ *الليلة هي ليلة {num(night, 'ar')} من رمضان* — تحرّوا ليلة القدر في الوتر من العشر الأواخر. "

@@ -71,6 +71,12 @@ def test_clock_is_12_hour():
     assert content.clock("12:05", "ar") == "12:05 م"
 
 
+def test_odd_night_ordinals():
+    assert "21st night" in content.qadr_message(21, "en")
+    assert "23rd night" in content.qadr_message(23, "en")
+    assert "29th night" in content.qadr_message(29, "en")
+
+
 def all_ar_messages():
     hijri = {"day": 9, "month": DHUL_HIJJAH, "year": 1448, "month_ar": "ذوالحجة", "month_en": "Dhū al-Ḥijjah"}
     yield content.occasion_message(list(content.OCCASIONS), hijri, "ar")
