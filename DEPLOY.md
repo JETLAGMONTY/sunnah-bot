@@ -23,6 +23,10 @@ database instead:
 Keep it handy — you'll paste it as `DATABASE_URL` below. The bot creates its one
 table by itself.
 
+Free Supabase projects **pause after about a week without activity**, and the bot
+can't start while its database is paused. Restore it from the Supabase dashboard
+if that happens.
+
 ---
 
 ## Step 1 — Put this folder on GitHub
@@ -31,7 +35,8 @@ table by itself.
 2. New repository → name it e.g. `sunnah-bot` → **Private** → Create.
 3. Upload the files from **this `bot/` folder** (you can drag-and-drop on the
    GitHub web "Add file → Upload files" page). Upload:
-   `sunnah_bot.py`, `requirements.txt`, `render.yaml`, `Dockerfile`, `.gitignore`.
+   `sunnah_bot.py`, the whole `sunnah/` folder (with `sunnah/data/`),
+   `requirements.txt`, `render.yaml`, `Dockerfile`, `.gitignore`.
    **Do NOT upload `config.json` or `state.json`** (they hold your secrets — the
    `.gitignore` already excludes them if you use git from the command line).
 
@@ -84,7 +89,8 @@ verification, not charged). Heavier setup:
 
 1. Create an Always Free **VM.Standard.A1.Flex** instance (Ubuntu).
 2. SSH in, install Python: `sudo apt update && sudo apt install -y python3-pip`.
-3. Copy `sunnah_bot.py` + `requirements.txt`, `pip3 install -r requirements.txt`.
+3. Copy `sunnah_bot.py`, the `sunnah/` folder and `requirements.txt`, then
+   `pip3 install -r requirements.txt`.
 4. Set env vars and run under **systemd** so it restarts automatically:
    ```ini
    # /etc/systemd/system/sunnah-bot.service
