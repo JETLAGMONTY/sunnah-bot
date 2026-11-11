@@ -408,6 +408,62 @@ def test_main_without_token_explains(tmp_path):
         botmod.main({}, str(tmp_path))
 
 
+def test_reminders_are_checked_between_queued_commands(bristol):
+    ticks = []
+    bristol.bot.tick = lambda: ticks.append(len(bristol.tg.sent))
+    bristol.tg.updates = [{"update_id": n, "message": {"chat": {"id": 1}, "text": "/help"}} for n in (1, 2, 3)]
+    bristol.bot.next_tick = 0
+    bristol.bot.run_once()
+    assert ticks == [0]                       # nothing due again yet: one check for the whole batch
+    bristol.tg.updates = [{"update_id": n, "message": {"chat": {"id": 1}, "text": "/help"}} for n in (4, 5, 6)]
+    real, botmod.TICK_SECONDS = botmod.TICK_SECONDS, -1   # every check is due, as after a slow reply
+    try:
+        ticks.clear()
+        bristol.bot.next_tick = 0
+        bristol.bot.run_once()
+    finally:
+        botmod.TICK_SECONDS = real
+    assert ticks == [3, 3, 4, 5]              # at the start, then again before each queued command
+
+
+def test_month_cache_is_capped(env, monkeypatch):
+    monkeypatch.setattr(botmod, "MAX_MONTHS", 3)
+    for n in range(6):
+        env.share(51.40 + n / 100, -2.59)
+    assert len(env.bot.months) == 3
+    assert "Prayer times" in env.tg.last()    # the newest location still gets its times
+
+
+def test_a_stale_copy_reloads_instead_of_bringing_back_a_forgotten_user(bristol):
+    from sunnah import store as storemod
+
+    class Shared(MemoryStore):
+        def save(self, text):
+            if self.changed_elsewhere:
+                raise storemod.Stale
+            super().save(text)
+
+    bristol.bot.store = shared = Shared({"last_update_id": 9, "users": {}})   # another copy handled /forget
+    shared.changed_elsewhere = True
+    bristol.bot.save()
+    bristol.bot.flush()
+    assert bristol.user() is None and shared.data["users"] == {} and not bristol.bot.dirty
+    assert any("reloading" in line for line in bristol.logs)
+
+
+def test_health_server_drops_idle_connections():
+    import socket
+    srv = botmod.start_health_server(0)
+    try:
+        assert srv.RequestHandlerClass.timeout == 10
+        srv.RequestHandlerClass.timeout = 0.3
+        with socket.create_connection(("127.0.0.1", srv.server_address[1])) as s:
+            s.settimeout(5)
+            assert s.recv(1) == b""           # closed by the server, nothing was sent
+    finally:
+        srv.shutdown()
+
+
 def test_health_server_answers():
     import urllib.request
     srv = botmod.start_health_server(0)

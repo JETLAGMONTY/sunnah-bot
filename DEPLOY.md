@@ -20,6 +20,11 @@ database instead:
    *Session pooler* URI; it looks like
    `postgresql://postgres.xxxx:PASSWORD@aws-0-...pooler.supabase.com:5432/postgres`).
 
+The bot always encrypts this connection. To also make it check the database's
+identity, add `?sslmode=verify-full&sslrootcert=system` to the end of the address
+if your provider's certificate is publicly trusted (Neon's is; for Supabase,
+download its CA certificate from the dashboard and point `sslrootcert` at the file).
+
 Keep it handy — you'll paste it as `DATABASE_URL` below. The bot creates its one
 table by itself.
 

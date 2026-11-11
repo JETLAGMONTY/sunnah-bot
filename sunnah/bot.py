@@ -23,6 +23,7 @@ from .telegram import Telegram
 TICK_SECONDS = 30       # how often reminders are checked
 SEND_INTERVAL = 0.05    # pause between scheduled sends (Telegram allows ~30/s)
 RETRY_SECONDS = 600     # wait after a failed Aladhan/Open-Meteo lookup
+MAX_MONTHS = 500        # cached prayer-time months kept in memory (a few tens of kB each)
 MAX_CITY_LEN = 80
 
 # Aladhan calculation methods (https://aladhan.com/calculation-methods).
@@ -98,6 +99,9 @@ class Bot:
             try:
                 self.store.save(json.dumps(self.db, ensure_ascii=False, indent=1))
                 self.dirty = False
+            except store.Stale:   # another copy saved first: take its state, never overwrite it
+                self.log("Another copy of the bot changed the saved state; reloading it.")
+                self.db, self.dirty = store.load_db(self.store.load(), self.lang), False
             except Exception as e:
                 self.log(f"Couldn't save state: {type(e).__name__}")
 
@@ -134,6 +138,8 @@ class Bot:
             old = (date.year * 12 + date.month) - 2          # keep last month onwards
             for k in [k for k in self.months if k[4] * 12 + k[5] < old]:
                 del self.months[k]
+            while len(self.months) > MAX_MONTHS:             # oldest first; a dropped month is fetched again
+                del self.months[next(iter(self.months))]
         return self.months[key].get(date)
 
     def ensure_place(self, u):
@@ -464,18 +470,22 @@ class Bot:
                 self.log(f"Scheduler error: {type(e).__name__}: {e}")
 
     # ---------------------------------------------------------------- main loop
+    def maybe_tick(self):
+        if time.monotonic() >= self.next_tick:
+            self.tick()
+            self.next_tick = time.monotonic() + TICK_SECONDS
+
     def run_once(self):
         """Check reminders if it's time, then long-poll Telegram until the next check."""
         try:
-            if time.monotonic() >= self.next_tick:
-                self.tick()
-                self.next_tick = time.monotonic() + TICK_SECONDS
+            self.maybe_tick()
             wait = max(0, min(25, int(self.next_tick - time.monotonic())))
             updates = self.tg.get_updates(offset=self.db["last_update_id"] + 1, timeout=wait)
             if updates is None:
                 self.sleep(10)   # network down or a second copy polling: back off, don't spin
                 return
             for upd in updates:
+                self.maybe_tick()   # a long batch of commands must not hold up everyone's reminders
                 self.db["last_update_id"] = upd["update_id"]
                 self.save()
                 try:
@@ -533,6 +543,7 @@ def start_health_server(port):
 
     class Health(BaseHTTPRequestHandler):
         server_version, sys_version = "SunnahBot", ""
+        timeout = 10   # drop a connection that sends nothing, so idle ones can't pile up
 
         def do_GET(self):
             self.send_response(200)

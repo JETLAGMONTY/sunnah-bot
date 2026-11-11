@@ -44,12 +44,13 @@ def test_file_store_round_trip(tmp_path):
 class FakeConn:
     """Just enough of a psycopg connection for one-row JSON storage."""
     def __init__(self):
-        self.sql, self.row, self.closed = [], None, False
+        self.sql, self.row, self.closed, self.rowcount = [], None, False, 0
 
     def execute(self, sql, params=None):
         self.sql.append(sql)
-        if sql.startswith("INSERT"):
-            self.row = params[0]
+        if sql.startswith(("INSERT", "UPDATE")):   # insert only if empty; update only the row last seen
+            ok = self.row is None if sql.startswith("INSERT") else self.row == params[1]
+            self.row, self.rowcount = (params[0] if ok else self.row), int(ok)
         return self
 
     def fetchone(self):
@@ -87,6 +88,35 @@ def test_database_errors_never_show_the_password():
     with pytest.raises(SystemExit) as e:
         store.open_store("postgresql://postgres:s3cret@db.example.com/postgres", "unused.json", connect=refuse)
     assert "s3cret" not in str(e.value) and "<password>" in str(e.value)
+
+
+def test_a_second_copy_cannot_overwrite_newer_postgres_state():
+    conn = FakeConn()
+    a = store.PostgresStore("postgresql://x", connect=lambda url: conn)
+    a.save('{"users": {"1": {}}}')
+    b = store.PostgresStore("postgresql://x", connect=lambda url: conn)
+    b.load()
+    b.save('{"users": {}}')                      # b handles /forget
+    with pytest.raises(store.Stale):
+        a.save('{"users": {"1": {"sent": ["x"]}}}')   # a still holds the deleted user
+    assert a.load() == {"users": {}}
+    a.save('{"users": {"2": {}}}')               # after reloading, a may write again
+
+
+def test_a_second_copy_cannot_overwrite_a_newer_state_file(tmp_path):
+    a, b = (store.FileStore(str(tmp_path / "state.json")) for _ in range(2))
+    a.save('{"users": {"1": {}}}')
+    b.load()
+    b.save('{"users": {}}')
+    with pytest.raises(store.Stale):
+        a.save('{"users": {"1": {}}}')
+    assert a.load() == {"users": {}}
+
+
+def test_database_connection_is_encrypted_unless_the_operator_chose_otherwise():
+    assert store.ssl_args("postgresql://u:p@h/db", {}) == {"sslmode": "require"}
+    assert store.ssl_args("postgresql://u:p@h/db?sslmode=verify-full", {}) == {}
+    assert store.ssl_args("postgresql://u:p@h/db", {"PGSSLMODE": "verify-full"}) == {}
 
 
 def test_without_database_url_users_live_in_a_file(tmp_path):

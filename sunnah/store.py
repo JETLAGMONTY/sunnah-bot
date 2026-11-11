@@ -22,6 +22,10 @@ USER_DEFAULTS = {
 }
 
 
+class Stale(Exception):
+    """Another copy of the bot has written the state since this one last read it."""
+
+
 def new_user(chat_id, lang):
     return {**copy.deepcopy(USER_DEFAULTS), "chat_id": chat_id, "lang": lang}
 
@@ -47,25 +51,32 @@ def load_db(data, lang):
 
 class FileStore:
     def __init__(self, path):
-        self.path = path
+        self.path, self.last = path, None   # last = the text this copy last read or wrote
 
-    def load(self):
+    def _read(self):
         if not os.path.exists(self.path):
             return None
         with open(self.path, encoding="utf-8") as f:
-            return json.load(f)
+            return f.read()
+
+    def load(self):
+        self.last = self._read()
+        return None if self.last is None else json.loads(self.last)
 
     def save(self, text):
+        if self._read() != self.last:   # never write an older copy over someone else's changes
+            raise Stale
         # Write a temp file and rename, so a crash mid-write never truncates the state.
         tmp = self.path + ".tmp"
         with open(tmp, "w", encoding="utf-8") as f:
             f.write(text)
         os.replace(tmp, self.path)
+        self.last = text
 
 
 class PostgresStore:
     def __init__(self, url, connect):
-        self.url, self.connect, self.conn = url, connect, None
+        self.url, self.connect, self.conn, self.last = url, connect, None, None
         # Its own schema, not `public`: Supabase publishes `public` tables through its
         # REST API, and this row holds users' locations. RLS with no policies also blocks
         # the API roles if the schema is ever exposed; the bot owns the table, so RLS
@@ -87,16 +98,29 @@ class PostgresStore:
 
     def load(self):
         row = self._run("SELECT data FROM sunnah_bot.state WHERE id = 1").fetchone()
+        self.last = row[0] if row else None
         return json.loads(row[0]) if row else None
 
     def save(self, text):
-        self._run("INSERT INTO sunnah_bot.state (id, data) VALUES (1, %s) "
-                  "ON CONFLICT (id) DO UPDATE SET data = EXCLUDED.data", (text,))
+        # Only replace the row this copy last saw: a second copy of the bot (a redeploy
+        # overlap, or one started by hand) must not write its older data over a /forget.
+        cur = (self._run("INSERT INTO sunnah_bot.state (id, data) VALUES (1, %s) ON CONFLICT (id) DO NOTHING", (text,))
+               if self.last is None else
+               self._run("UPDATE sunnah_bot.state SET data = %s WHERE id = 1 AND data = %s", (text, self.last)))
+        if cur.rowcount == 0:
+            raise Stale
+        self.last = text
+
+
+def ssl_args(url, environ=os.environ):
+    """Refuse an unencrypted database connection unless the operator chose an sslmode.
+    `require` encrypts; add sslmode=verify-full to the URL to also check the server's certificate."""
+    return {} if "sslmode=" in url or environ.get("PGSSLMODE") else {"sslmode": "require"}
 
 
 def _psycopg_connect(url):
     import psycopg   # only needed when DATABASE_URL is set
-    return psycopg.connect(url, autocommit=True)
+    return psycopg.connect(url, autocommit=True, **ssl_args(url))
 
 
 def open_store(database_url, path, connect=_psycopg_connect):
