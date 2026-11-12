@@ -1,0 +1,1450 @@
+{
+ "code": 200,
+ "status": "OK",
+ "data": [
+  {
+   "timings": {
+    "Fajr": "03:47 (BST)",
+    "Sunrise": "05:43 (BST)",
+    "Dhuhr": "13:07 (BST)",
+    "Asr": "17:09 (BST)",
+    "Sunset": "20:33 (BST)",
+    "Maghrib": "20:33 (BST)",
+    "Isha": "22:29 (BST)",
+    "Midnight": "01:08 (BST)"
+   },
+   "date": {
+    "readable": "01 May 2027",
+    "timestamp": "1809158461",
+    "gregorian": {
+     "date": "01-05-2027",
+     "weekday": {
+      "en": "Saturday"
+     }
+    },
+    "hijri": {
+     "date": "24-11-1448",
+     "day": "24",
+     "month": {
+      "number": 11,
+      "en": "Dhū al-Qaʿdah",
+      "ar": "ذوالقعدة",
+      "days": 29
+     },
+     "year": "1448",
+     "holidays": [],
+     "method": "UAQ"
+    }
+   },
+   "meta": {
+    "latitude": 51.4545,
+    "longitude": -2.5879,
+    "timezone": "Europe/London",
+    "method": {
+     "id": 2,
+     "name": "Islamic Society of North America (ISNA)"
+    },
+    "latitudeAdjustmentMethod": "ANGLE_BASED",
+    "school": "STANDARD"
+   }
+  },
+  {
+   "timings": {
+    "Fajr": "03:44 (BST)",
+    "Sunrise": "05:41 (BST)",
+    "Dhuhr": "13:07 (BST)",
+    "Asr": "17:10 (BST)",
+    "Sunset": "20:35 (BST)",
+    "Maghrib": "20:35 (BST)",
+    "Isha": "22:32 (BST)",
+    "Midnight": "01:08 (BST)"
+   },
+   "date": {
+    "readable": "02 May 2027",
+    "timestamp": "1809244861",
+    "gregorian": {
+     "date": "02-05-2027",
+     "weekday": {
+      "en": "Sunday"
+     }
+    },
+    "hijri": {
+     "date": "25-11-1448",
+     "day": "25",
+     "month": {
+      "number": 11,
+      "en": "Dhū al-Qaʿdah",
+      "ar": "ذوالقعدة",
+      "days": 29
+     },
+     "year": "1448",
+     "holidays": [],
+     "method": "UAQ"
+    }
+   },
+   "meta": {
+    "latitude": 51.4545,
+    "longitude": -2.5879,
+    "timezone": "Europe/London",
+    "method": {
+     "id": 2,
+     "name": "Islamic Society of North America (ISNA)"
+    },
+    "latitudeAdjustmentMethod": "ANGLE_BASED",
+    "school": "STANDARD"
+   }
+  },
+  {
+   "timings": {
+    "Fajr": "03:42 (BST)",
+    "Sunrise": "05:39 (BST)",
+    "Dhuhr": "13:07 (BST)",
+    "Asr": "17:11 (BST)",
+    "Sunset": "20:36 (BST)",
+    "Maghrib": "20:36 (BST)",
+    "Isha": "22:34 (BST)",
+    "Midnight": "01:08 (BST)"
+   },
+   "date": {
+    "readable": "03 May 2027",
+    "timestamp": "1809331261",
+    "gregorian": {
+     "date": "03-05-2027",
+     "weekday": {
+      "en": "Monday"
+     }
+    },
+    "hijri": {
+     "date": "26-11-1448",
+     "day": "26",
+     "month": {
+      "number": 11,
+      "en": "Dhū al-Qaʿdah",
+      "ar": "ذوالقعدة",
+      "days": 29
+     },
+     "year": "1448",
+     "holidays": [],
+     "method": "UAQ"
+    }
+   },
+   "meta": {
+    "latitude": 51.4545,
+    "longitude": -2.5879,
+    "timezone": "Europe/London",
+    "method": {
+     "id": 2,
+     "name": "Islamic Society of North America (ISNA)"
+    },
+    "latitudeAdjustmentMethod": "ANGLE_BASED",
+    "school": "STANDARD"
+   }
+  },
+  {
+   "timings": {
+    "Fajr": "03:39 (BST)",
+    "Sunrise": "05:37 (BST)",
+    "Dhuhr": "13:07 (BST)",
+    "Asr": "17:11 (BST)",
+    "Sunset": "20:38 (BST)",
+    "Maghrib": "20:38 (BST)",
+    "Isha": "22:37 (BST)",
+    "Midnight": "01:08 (BST)"
+   },
+   "date": {
+    "readable": "04 May 2027",
+    "timestamp": "1809417661",
+    "gregorian": {
+     "date": "04-05-2027",
+     "weekday": {
+      "en": "Tuesday"
+     }
+    },
+    "hijri": {
+     "date": "27-11-1448",
+     "day": "27",
+     "month": {
+      "number": 11,
+      "en": "Dhū al-Qaʿdah",
+      "ar": "ذوالقعدة",
+      "days": 29
+     },
+     "year": "1448",
+     "holidays": [],
+     "method": "UAQ"
+    }
+   },
+   "meta": {
+    "latitude": 51.4545,
+    "longitude": -2.5879,
+    "timezone": "Europe/London",
+    "method": {
+     "id": 2,
+     "name": "Islamic Society of North America (ISNA)"
+    },
+    "latitudeAdjustmentMethod": "ANGLE_BASED",
+    "school": "STANDARD"
+   }
+  },
+  {
+   "timings": {
+    "Fajr": "03:36 (BST)",
+    "Sunrise": "05:36 (BST)",
+    "Dhuhr": "13:07 (BST)",
+    "Asr": "17:12 (BST)",
+    "Sunset": "20:39 (BST)",
+    "Maghrib": "20:39 (BST)",
+    "Isha": "22:40 (BST)",
+    "Midnight": "01:08 (BST)"
+   },
+   "date": {
+    "readable": "05 May 2027",
+    "timestamp": "1809504061",
+    "gregorian": {
+     "date": "05-05-2027",
+     "weekday": {
+      "en": "Wednesday"
+     }
+    },
+    "hijri": {
+     "date": "28-11-1448",
+     "day": "28",
+     "month": {
+      "number": 11,
+      "en": "Dhū al-Qaʿdah",
+      "ar": "ذوالقعدة",
+      "days": 29
+     },
+     "year": "1448",
+     "holidays": [],
+     "method": "UAQ"
+    }
+   },
+   "meta": {
+    "latitude": 51.4545,
+    "longitude": -2.5879,
+    "timezone": "Europe/London",
+    "method": {
+     "id": 2,
+     "name": "Islamic Society of North America (ISNA)"
+    },
+    "latitudeAdjustmentMethod": "ANGLE_BASED",
+    "school": "STANDARD"
+   }
+  },
+  {
+   "timings": {
+    "Fajr": "03:33 (BST)",
+    "Sunrise": "05:34 (BST)",
+    "Dhuhr": "13:07 (BST)",
+    "Asr": "17:13 (BST)",
+    "Sunset": "20:41 (BST)",
+    "Maghrib": "20:41 (BST)",
+    "Isha": "22:43 (BST)",
+    "Midnight": "01:07 (BST)"
+   },
+   "date": {
+    "readable": "06 May 2027",
+    "timestamp": "1809590461",
+    "gregorian": {
+     "date": "06-05-2027",
+     "weekday": {
+      "en": "Thursday"
+     }
+    },
+    "hijri": {
+     "date": "29-11-1448",
+     "day": "29",
+     "month": {
+      "number": 11,
+      "en": "Dhū al-Qaʿdah",
+      "ar": "ذوالقعدة",
+      "days": 29
+     },
+     "year": "1448",
+     "holidays": [],
+     "method": "UAQ"
+    }
+   },
+   "meta": {
+    "latitude": 51.4545,
+    "longitude": -2.5879,
+    "timezone": "Europe/London",
+    "method": {
+     "id": 2,
+     "name": "Islamic Society of North America (ISNA)"
+    },
+    "latitudeAdjustmentMethod": "ANGLE_BASED",
+    "school": "STANDARD"
+   }
+  },
+  {
+   "timings": {
+    "Fajr": "03:30 (BST)",
+    "Sunrise": "05:32 (BST)",
+    "Dhuhr": "13:07 (BST)",
+    "Asr": "17:13 (BST)",
+    "Sunset": "20:43 (BST)",
+    "Maghrib": "20:43 (BST)",
+    "Isha": "22:45 (BST)",
+    "Midnight": "01:07 (BST)"
+   },
+   "date": {
+    "readable": "07 May 2027",
+    "timestamp": "1809676861",
+    "gregorian": {
+     "date": "07-05-2027",
+     "weekday": {
+      "en": "Friday"
+     }
+    },
+    "hijri": {
+     "date": "01-12-1448",
+     "day": "1",
+     "month": {
+      "number": 12,
+      "en": "Dhū al-Ḥijjah",
+      "ar": "ذوالحجة",
+      "days": 30
+     },
+     "year": "1448",
+     "holidays": [],
+     "method": "UAQ"
+    }
+   },
+   "meta": {
+    "latitude": 51.4545,
+    "longitude": -2.5879,
+    "timezone": "Europe/London",
+    "method": {
+     "id": 2,
+     "name": "Islamic Society of North America (ISNA)"
+    },
+    "latitudeAdjustmentMethod": "ANGLE_BASED",
+    "school": "STANDARD"
+   }
+  },
+  {
+   "timings": {
+    "Fajr": "03:27 (BST)",
+    "Sunrise": "05:30 (BST)",
+    "Dhuhr": "13:07 (BST)",
+    "Asr": "17:14 (BST)",
+    "Sunset": "20:44 (BST)",
+    "Maghrib": "20:44 (BST)",
+    "Isha": "22:48 (BST)",
+    "Midnight": "01:07 (BST)"
+   },
+   "date": {
+    "readable": "08 May 2027",
+    "timestamp": "1809763261",
+    "gregorian": {
+     "date": "08-05-2027",
+     "weekday": {
+      "en": "Saturday"
+     }
+    },
+    "hijri": {
+     "date": "02-12-1448",
+     "day": "2",
+     "month": {
+      "number": 12,
+      "en": "Dhū al-Ḥijjah",
+      "ar": "ذوالحجة",
+      "days": 30
+     },
+     "year": "1448",
+     "holidays": [],
+     "method": "UAQ"
+    }
+   },
+   "meta": {
+    "latitude": 51.4545,
+    "longitude": -2.5879,
+    "timezone": "Europe/London",
+    "method": {
+     "id": 2,
+     "name": "Islamic Society of North America (ISNA)"
+    },
+    "latitudeAdjustmentMethod": "ANGLE_BASED",
+    "school": "STANDARD"
+   }
+  },
+  {
+   "timings": {
+    "Fajr": "03:24 (BST)",
+    "Sunrise": "05:29 (BST)",
+    "Dhuhr": "13:07 (BST)",
+    "Asr": "17:15 (BST)",
+    "Sunset": "20:46 (BST)",
+    "Maghrib": "20:46 (BST)",
+    "Isha": "22:51 (BST)",
+    "Midnight": "01:07 (BST)"
+   },
+   "date": {
+    "readable": "09 May 2027",
+    "timestamp": "1809849661",
+    "gregorian": {
+     "date": "09-05-2027",
+     "weekday": {
+      "en": "Sunday"
+     }
+    },
+    "hijri": {
+     "date": "03-12-1448",
+     "day": "3",
+     "month": {
+      "number": 12,
+      "en": "Dhū al-Ḥijjah",
+      "ar": "ذوالحجة",
+      "days": 30
+     },
+     "year": "1448",
+     "holidays": [],
+     "method": "UAQ"
+    }
+   },
+   "meta": {
+    "latitude": 51.4545,
+    "longitude": -2.5879,
+    "timezone": "Europe/London",
+    "method": {
+     "id": 2,
+     "name": "Islamic Society of North America (ISNA)"
+    },
+    "latitudeAdjustmentMethod": "ANGLE_BASED",
+    "school": "STANDARD"
+   }
+  },
+  {
+   "timings": {
+    "Fajr": "03:21 (BST)",
+    "Sunrise": "05:27 (BST)",
+    "Dhuhr": "13:07 (BST)",
+    "Asr": "17:15 (BST)",
+    "Sunset": "20:47 (BST)",
+    "Maghrib": "20:47 (BST)",
+    "Isha": "22:54 (BST)",
+    "Midnight": "01:07 (BST)"
+   },
+   "date": {
+    "readable": "10 May 2027",
+    "timestamp": "1809936061",
+    "gregorian": {
+     "date": "10-05-2027",
+     "weekday": {
+      "en": "Monday"
+     }
+    },
+    "hijri": {
+     "date": "04-12-1448",
+     "day": "4",
+     "month": {
+      "number": 12,
+      "en": "Dhū al-Ḥijjah",
+      "ar": "ذوالحجة",
+      "days": 30
+     },
+     "year": "1448",
+     "holidays": [],
+     "method": "UAQ"
+    }
+   },
+   "meta": {
+    "latitude": 51.4545,
+    "longitude": -2.5879,
+    "timezone": "Europe/London",
+    "method": {
+     "id": 2,
+     "name": "Islamic Society of North America (ISNA)"
+    },
+    "latitudeAdjustmentMethod": "ANGLE_BASED",
+    "school": "STANDARD"
+   }
+  },
+  {
+   "timings": {
+    "Fajr": "03:18 (BST)",
+    "Sunrise": "05:25 (BST)",
+    "Dhuhr": "13:07 (BST)",
+    "Asr": "17:16 (BST)",
+    "Sunset": "20:49 (BST)",
+    "Maghrib": "20:49 (BST)",
+    "Isha": "22:57 (BST)",
+    "Midnight": "01:07 (BST)"
+   },
+   "date": {
+    "readable": "11 May 2027",
+    "timestamp": "1810022461",
+    "gregorian": {
+     "date": "11-05-2027",
+     "weekday": {
+      "en": "Tuesday"
+     }
+    },
+    "hijri": {
+     "date": "05-12-1448",
+     "day": "5",
+     "month": {
+      "number": 12,
+      "en": "Dhū al-Ḥijjah",
+      "ar": "ذوالحجة",
+      "days": 30
+     },
+     "year": "1448",
+     "holidays": [],
+     "method": "UAQ"
+    }
+   },
+   "meta": {
+    "latitude": 51.4545,
+    "longitude": -2.5879,
+    "timezone": "Europe/London",
+    "method": {
+     "id": 2,
+     "name": "Islamic Society of North America (ISNA)"
+    },
+    "latitudeAdjustmentMethod": "ANGLE_BASED",
+    "school": "STANDARD"
+   }
+  },
+  {
+   "timings": {
+    "Fajr": "03:15 (BST)",
+    "Sunrise": "05:24 (BST)",
+    "Dhuhr": "13:07 (BST)",
+    "Asr": "17:17 (BST)",
+    "Sunset": "20:51 (BST)",
+    "Maghrib": "20:51 (BST)",
+    "Isha": "22:59 (BST)",
+    "Midnight": "01:07 (BST)"
+   },
+   "date": {
+    "readable": "12 May 2027",
+    "timestamp": "1810108861",
+    "gregorian": {
+     "date": "12-05-2027",
+     "weekday": {
+      "en": "Wednesday"
+     }
+    },
+    "hijri": {
+     "date": "06-12-1448",
+     "day": "6",
+     "month": {
+      "number": 12,
+      "en": "Dhū al-Ḥijjah",
+      "ar": "ذوالحجة",
+      "days": 30
+     },
+     "year": "1448",
+     "holidays": [],
+     "method": "UAQ"
+    }
+   },
+   "meta": {
+    "latitude": 51.4545,
+    "longitude": -2.5879,
+    "timezone": "Europe/London",
+    "method": {
+     "id": 2,
+     "name": "Islamic Society of North America (ISNA)"
+    },
+    "latitudeAdjustmentMethod": "ANGLE_BASED",
+    "school": "STANDARD"
+   }
+  },
+  {
+   "timings": {
+    "Fajr": "03:15 (BST)",
+    "Sunrise": "05:22 (BST)",
+    "Dhuhr": "13:07 (BST)",
+    "Asr": "17:17 (BST)",
+    "Sunset": "20:52 (BST)",
+    "Maghrib": "20:52 (BST)",
+    "Isha": "23:00 (BST)",
+    "Midnight": "01:07 (BST)"
+   },
+   "date": {
+    "readable": "13 May 2027",
+    "timestamp": "1810195261",
+    "gregorian": {
+     "date": "13-05-2027",
+     "weekday": {
+      "en": "Thursday"
+     }
+    },
+    "hijri": {
+     "date": "07-12-1448",
+     "day": "7",
+     "month": {
+      "number": 12,
+      "en": "Dhū al-Ḥijjah",
+      "ar": "ذوالحجة",
+      "days": 30
+     },
+     "year": "1448",
+     "holidays": [],
+     "method": "UAQ"
+    }
+   },
+   "meta": {
+    "latitude": 51.4545,
+    "longitude": -2.5879,
+    "timezone": "Europe/London",
+    "method": {
+     "id": 2,
+     "name": "Islamic Society of North America (ISNA)"
+    },
+    "latitudeAdjustmentMethod": "ANGLE_BASED",
+    "school": "STANDARD"
+   }
+  },
+  {
+   "timings": {
+    "Fajr": "03:14 (BST)",
+    "Sunrise": "05:21 (BST)",
+    "Dhuhr": "13:07 (BST)",
+    "Asr": "17:18 (BST)",
+    "Sunset": "20:54 (BST)",
+    "Maghrib": "20:54 (BST)",
+    "Isha": "23:00 (BST)",
+    "Midnight": "01:07 (BST)"
+   },
+   "date": {
+    "readable": "14 May 2027",
+    "timestamp": "1810281661",
+    "gregorian": {
+     "date": "14-05-2027",
+     "weekday": {
+      "en": "Friday"
+     }
+    },
+    "hijri": {
+     "date": "08-12-1448",
+     "day": "8",
+     "month": {
+      "number": 12,
+      "en": "Dhū al-Ḥijjah",
+      "ar": "ذوالحجة",
+      "days": 30
+     },
+     "year": "1448",
+     "holidays": [
+      "Hajj"
+     ],
+     "method": "UAQ"
+    }
+   },
+   "meta": {
+    "latitude": 51.4545,
+    "longitude": -2.5879,
+    "timezone": "Europe/London",
+    "method": {
+     "id": 2,
+     "name": "Islamic Society of North America (ISNA)"
+    },
+    "latitudeAdjustmentMethod": "ANGLE_BASED",
+    "school": "STANDARD"
+   }
+  },
+  {
+   "timings": {
+    "Fajr": "03:13 (BST)",
+    "Sunrise": "05:19 (BST)",
+    "Dhuhr": "13:07 (BST)",
+    "Asr": "17:18 (BST)",
+    "Sunset": "20:55 (BST)",
+    "Maghrib": "20:55 (BST)",
+    "Isha": "23:01 (BST)",
+    "Midnight": "01:07 (BST)"
+   },
+   "date": {
+    "readable": "15 May 2027",
+    "timestamp": "1810368061",
+    "gregorian": {
+     "date": "15-05-2027",
+     "weekday": {
+      "en": "Saturday"
+     }
+    },
+    "hijri": {
+     "date": "09-12-1448",
+     "day": "9",
+     "month": {
+      "number": 12,
+      "en": "Dhū al-Ḥijjah",
+      "ar": "ذوالحجة",
+      "days": 30
+     },
+     "year": "1448",
+     "holidays": [
+      "Hajj",
+      "Arafa"
+     ],
+     "method": "UAQ"
+    }
+   },
+   "meta": {
+    "latitude": 51.4545,
+    "longitude": -2.5879,
+    "timezone": "Europe/London",
+    "method": {
+     "id": 2,
+     "name": "Islamic Society of North America (ISNA)"
+    },
+    "latitudeAdjustmentMethod": "ANGLE_BASED",
+    "school": "STANDARD"
+   }
+  },
+  {
+   "timings": {
+    "Fajr": "03:12 (BST)",
+    "Sunrise": "05:18 (BST)",
+    "Dhuhr": "13:07 (BST)",
+    "Asr": "17:19 (BST)",
+    "Sunset": "20:57 (BST)",
+    "Maghrib": "20:57 (BST)",
+    "Isha": "23:02 (BST)",
+    "Midnight": "01:07 (BST)"
+   },
+   "date": {
+    "readable": "16 May 2027",
+    "timestamp": "1810454461",
+    "gregorian": {
+     "date": "16-05-2027",
+     "weekday": {
+      "en": "Sunday"
+     }
+    },
+    "hijri": {
+     "date": "10-12-1448",
+     "day": "10",
+     "month": {
+      "number": 12,
+      "en": "Dhū al-Ḥijjah",
+      "ar": "ذوالحجة",
+      "days": 30
+     },
+     "year": "1448",
+     "holidays": [
+      "Eid-ul-Adha",
+      "Hajj",
+      "Urs Ismail Muhammad ash-Shirwani ق"
+     ],
+     "method": "UAQ"
+    }
+   },
+   "meta": {
+    "latitude": 51.4545,
+    "longitude": -2.5879,
+    "timezone": "Europe/London",
+    "method": {
+     "id": 2,
+     "name": "Islamic Society of North America (ISNA)"
+    },
+    "latitudeAdjustmentMethod": "ANGLE_BASED",
+    "school": "STANDARD"
+   }
+  },
+  {
+   "timings": {
+    "Fajr": "03:12 (BST)",
+    "Sunrise": "05:16 (BST)",
+    "Dhuhr": "13:07 (BST)",
+    "Asr": "17:20 (BST)",
+    "Sunset": "20:58 (BST)",
+    "Maghrib": "20:58 (BST)",
+    "Isha": "23:03 (BST)",
+    "Midnight": "01:07 (BST)"
+   },
+   "date": {
+    "readable": "17 May 2027",
+    "timestamp": "1810540861",
+    "gregorian": {
+     "date": "17-05-2027",
+     "weekday": {
+      "en": "Monday"
+     }
+    },
+    "hijri": {
+     "date": "11-12-1448",
+     "day": "11",
+     "month": {
+      "number": 12,
+      "en": "Dhū al-Ḥijjah",
+      "ar": "ذوالحجة",
+      "days": 30
+     },
+     "year": "1448",
+     "holidays": [
+      "Hajj",
+      "Urs of Uthman ibn Affan (3rd Caliph) (ر)"
+     ],
+     "method": "UAQ"
+    }
+   },
+   "meta": {
+    "latitude": 51.4545,
+    "longitude": -2.5879,
+    "timezone": "Europe/London",
+    "method": {
+     "id": 2,
+     "name": "Islamic Society of North America (ISNA)"
+    },
+    "latitudeAdjustmentMethod": "ANGLE_BASED",
+    "school": "STANDARD"
+   }
+  },
+  {
+   "timings": {
+    "Fajr": "03:11 (BST)",
+    "Sunrise": "05:15 (BST)",
+    "Dhuhr": "13:07 (BST)",
+    "Asr": "17:20 (BST)",
+    "Sunset": "21:00 (BST)",
+    "Maghrib": "21:00 (BST)",
+    "Isha": "23:03 (BST)",
+    "Midnight": "01:07 (BST)"
+   },
+   "date": {
+    "readable": "18 May 2027",
+    "timestamp": "1810627261",
+    "gregorian": {
+     "date": "18-05-2027",
+     "weekday": {
+      "en": "Tuesday"
+     }
+    },
+    "hijri": {
+     "date": "12-12-1448",
+     "day": "12",
+     "month": {
+      "number": 12,
+      "en": "Dhū al-Ḥijjah",
+      "ar": "ذوالحجة",
+      "days": 30
+     },
+     "year": "1448",
+     "holidays": [
+      "Hajj"
+     ],
+     "method": "UAQ"
+    }
+   },
+   "meta": {
+    "latitude": 51.4545,
+    "longitude": -2.5879,
+    "timezone": "Europe/London",
+    "method": {
+     "id": 2,
+     "name": "Islamic Society of North America (ISNA)"
+    },
+    "latitudeAdjustmentMethod": "ANGLE_BASED",
+    "school": "STANDARD"
+   }
+  },
+  {
+   "timings": {
+    "Fajr": "03:10 (BST)",
+    "Sunrise": "05:13 (BST)",
+    "Dhuhr": "13:07 (BST)",
+    "Asr": "17:21 (BST)",
+    "Sunset": "21:01 (BST)",
+    "Maghrib": "21:01 (BST)",
+    "Isha": "23:04 (BST)",
+    "Midnight": "01:07 (BST)"
+   },
+   "date": {
+    "readable": "19 May 2027",
+    "timestamp": "1810713661",
+    "gregorian": {
+     "date": "19-05-2027",
+     "weekday": {
+      "en": "Wednesday"
+     }
+    },
+    "hijri": {
+     "date": "13-12-1448",
+     "day": "13",
+     "month": {
+      "number": 12,
+      "en": "Dhū al-Ḥijjah",
+      "ar": "ذوالحجة",
+      "days": 30
+     },
+     "year": "1448",
+     "holidays": [
+      "Hajj"
+     ],
+     "method": "UAQ"
+    }
+   },
+   "meta": {
+    "latitude": 51.4545,
+    "longitude": -2.5879,
+    "timezone": "Europe/London",
+    "method": {
+     "id": 2,
+     "name": "Islamic Society of North America (ISNA)"
+    },
+    "latitudeAdjustmentMethod": "ANGLE_BASED",
+    "school": "STANDARD"
+   }
+  },
+  {
+   "timings": {
+    "Fajr": "03:10 (BST)",
+    "Sunrise": "05:12 (BST)",
+    "Dhuhr": "13:07 (BST)",
+    "Asr": "17:21 (BST)",
+    "Sunset": "21:02 (BST)",
+    "Maghrib": "21:02 (BST)",
+    "Isha": "23:05 (BST)",
+    "Midnight": "01:07 (BST)"
+   },
+   "date": {
+    "readable": "20 May 2027",
+    "timestamp": "1810800061",
+    "gregorian": {
+     "date": "20-05-2027",
+     "weekday": {
+      "en": "Thursday"
+     }
+    },
+    "hijri": {
+     "date": "14-12-1448",
+     "day": "14",
+     "month": {
+      "number": 12,
+      "en": "Dhū al-Ḥijjah",
+      "ar": "ذوالحجة",
+      "days": 30
+     },
+     "year": "1448",
+     "holidays": [],
+     "method": "UAQ"
+    }
+   },
+   "meta": {
+    "latitude": 51.4545,
+    "longitude": -2.5879,
+    "timezone": "Europe/London",
+    "method": {
+     "id": 2,
+     "name": "Islamic Society of North America (ISNA)"
+    },
+    "latitudeAdjustmentMethod": "ANGLE_BASED",
+    "school": "STANDARD"
+   }
+  },
+  {
+   "timings": {
+    "Fajr": "03:09 (BST)",
+    "Sunrise": "05:11 (BST)",
+    "Dhuhr": "13:07 (BST)",
+    "Asr": "17:22 (BST)",
+    "Sunset": "21:04 (BST)",
+    "Maghrib": "21:04 (BST)",
+    "Isha": "23:06 (BST)",
+    "Midnight": "01:07 (BST)"
+   },
+   "date": {
+    "readable": "21 May 2027",
+    "timestamp": "1810886461",
+    "gregorian": {
+     "date": "21-05-2027",
+     "weekday": {
+      "en": "Friday"
+     }
+    },
+    "hijri": {
+     "date": "15-12-1448",
+     "day": "15",
+     "month": {
+      "number": 12,
+      "en": "Dhū al-Ḥijjah",
+      "ar": "ذوالحجة",
+      "days": 30
+     },
+     "year": "1448",
+     "holidays": [],
+     "method": "UAQ"
+    }
+   },
+   "meta": {
+    "latitude": 51.4545,
+    "longitude": -2.5879,
+    "timezone": "Europe/London",
+    "method": {
+     "id": 2,
+     "name": "Islamic Society of North America (ISNA)"
+    },
+    "latitudeAdjustmentMethod": "ANGLE_BASED",
+    "school": "STANDARD"
+   }
+  },
+  {
+   "timings": {
+    "Fajr": "03:08 (BST)",
+    "Sunrise": "05:10 (BST)",
+    "Dhuhr": "13:07 (BST)",
+    "Asr": "17:22 (BST)",
+    "Sunset": "21:05 (BST)",
+    "Maghrib": "21:05 (BST)",
+    "Isha": "23:06 (BST)",
+    "Midnight": "01:07 (BST)"
+   },
+   "date": {
+    "readable": "22 May 2027",
+    "timestamp": "1810972861",
+    "gregorian": {
+     "date": "22-05-2027",
+     "weekday": {
+      "en": "Saturday"
+     }
+    },
+    "hijri": {
+     "date": "16-12-1448",
+     "day": "16",
+     "month": {
+      "number": 12,
+      "en": "Dhū al-Ḥijjah",
+      "ar": "ذوالحجة",
+      "days": 30
+     },
+     "year": "1448",
+     "holidays": [],
+     "method": "UAQ"
+    }
+   },
+   "meta": {
+    "latitude": 51.4545,
+    "longitude": -2.5879,
+    "timezone": "Europe/London",
+    "method": {
+     "id": 2,
+     "name": "Islamic Society of North America (ISNA)"
+    },
+    "latitudeAdjustmentMethod": "ANGLE_BASED",
+    "school": "STANDARD"
+   }
+  },
+  {
+   "timings": {
+    "Fajr": "03:08 (BST)",
+    "Sunrise": "05:08 (BST)",
+    "Dhuhr": "13:07 (BST)",
+    "Asr": "17:23 (BST)",
+    "Sunset": "21:07 (BST)",
+    "Maghrib": "21:07 (BST)",
+    "Isha": "23:07 (BST)",
+    "Midnight": "01:07 (BST)"
+   },
+   "date": {
+    "readable": "23 May 2027",
+    "timestamp": "1811059261",
+    "gregorian": {
+     "date": "23-05-2027",
+     "weekday": {
+      "en": "Sunday"
+     }
+    },
+    "hijri": {
+     "date": "17-12-1448",
+     "day": "17",
+     "month": {
+      "number": 12,
+      "en": "Dhū al-Ḥijjah",
+      "ar": "ذوالحجة",
+      "days": 30
+     },
+     "year": "1448",
+     "holidays": [],
+     "method": "UAQ"
+    }
+   },
+   "meta": {
+    "latitude": 51.4545,
+    "longitude": -2.5879,
+    "timezone": "Europe/London",
+    "method": {
+     "id": 2,
+     "name": "Islamic Society of North America (ISNA)"
+    },
+    "latitudeAdjustmentMethod": "ANGLE_BASED",
+    "school": "STANDARD"
+   }
+  },
+  {
+   "timings": {
+    "Fajr": "03:07 (BST)",
+    "Sunrise": "05:07 (BST)",
+    "Dhuhr": "13:07 (BST)",
+    "Asr": "17:24 (BST)",
+    "Sunset": "21:08 (BST)",
+    "Maghrib": "21:08 (BST)",
+    "Isha": "23:08 (BST)",
+    "Midnight": "01:08 (BST)"
+   },
+   "date": {
+    "readable": "24 May 2027",
+    "timestamp": "1811145661",
+    "gregorian": {
+     "date": "24-05-2027",
+     "weekday": {
+      "en": "Monday"
+     }
+    },
+    "hijri": {
+     "date": "18-12-1448",
+     "day": "18",
+     "month": {
+      "number": 12,
+      "en": "Dhū al-Ḥijjah",
+      "ar": "ذوالحجة",
+      "days": 30
+     },
+     "year": "1448",
+     "holidays": [],
+     "method": "UAQ"
+    }
+   },
+   "meta": {
+    "latitude": 51.4545,
+    "longitude": -2.5879,
+    "timezone": "Europe/London",
+    "method": {
+     "id": 2,
+     "name": "Islamic Society of North America (ISNA)"
+    },
+    "latitudeAdjustmentMethod": "ANGLE_BASED",
+    "school": "STANDARD"
+   }
+  },
+  {
+   "timings": {
+    "Fajr": "03:07 (BST)",
+    "Sunrise": "05:06 (BST)",
+    "Dhuhr": "13:07 (BST)",
+    "Asr": "17:24 (BST)",
+    "Sunset": "21:09 (BST)",
+    "Maghrib": "21:09 (BST)",
+    "Isha": "23:08 (BST)",
+    "Midnight": "01:08 (BST)"
+   },
+   "date": {
+    "readable": "25 May 2027",
+    "timestamp": "1811232061",
+    "gregorian": {
+     "date": "25-05-2027",
+     "weekday": {
+      "en": "Tuesday"
+     }
+    },
+    "hijri": {
+     "date": "19-12-1448",
+     "day": "19",
+     "month": {
+      "number": 12,
+      "en": "Dhū al-Ḥijjah",
+      "ar": "ذوالحجة",
+      "days": 30
+     },
+     "year": "1448",
+     "holidays": [
+      "First time Adhan was called in 622 AD"
+     ],
+     "method": "UAQ"
+    }
+   },
+   "meta": {
+    "latitude": 51.4545,
+    "longitude": -2.5879,
+    "timezone": "Europe/London",
+    "method": {
+     "id": 2,
+     "name": "Islamic Society of North America (ISNA)"
+    },
+    "latitudeAdjustmentMethod": "ANGLE_BASED",
+    "school": "STANDARD"
+   }
+  },
+  {
+   "timings": {
+    "Fajr": "03:06 (BST)",
+    "Sunrise": "05:05 (BST)",
+    "Dhuhr": "13:07 (BST)",
+    "Asr": "17:25 (BST)",
+    "Sunset": "21:10 (BST)",
+    "Maghrib": "21:10 (BST)",
+    "Isha": "23:09 (BST)",
+    "Midnight": "01:08 (BST)"
+   },
+   "date": {
+    "readable": "26 May 2027",
+    "timestamp": "1811318461",
+    "gregorian": {
+     "date": "26-05-2027",
+     "weekday": {
+      "en": "Wednesday"
+     }
+    },
+    "hijri": {
+     "date": "20-12-1448",
+     "day": "20",
+     "month": {
+      "number": 12,
+      "en": "Dhū al-Ḥijjah",
+      "ar": "ذوالحجة",
+      "days": 30
+     },
+     "year": "1448",
+     "holidays": [],
+     "method": "UAQ"
+    }
+   },
+   "meta": {
+    "latitude": 51.4545,
+    "longitude": -2.5879,
+    "timezone": "Europe/London",
+    "method": {
+     "id": 2,
+     "name": "Islamic Society of North America (ISNA)"
+    },
+    "latitudeAdjustmentMethod": "ANGLE_BASED",
+    "school": "STANDARD"
+   }
+  },
+  {
+   "timings": {
+    "Fajr": "03:06 (BST)",
+    "Sunrise": "05:04 (BST)",
+    "Dhuhr": "13:08 (BST)",
+    "Asr": "17:25 (BST)",
+    "Sunset": "21:12 (BST)",
+    "Maghrib": "21:12 (BST)",
+    "Isha": "23:10 (BST)",
+    "Midnight": "01:08 (BST)"
+   },
+   "date": {
+    "readable": "27 May 2027",
+    "timestamp": "1811404861",
+    "gregorian": {
+     "date": "27-05-2027",
+     "weekday": {
+      "en": "Thursday"
+     }
+    },
+    "hijri": {
+     "date": "21-12-1448",
+     "day": "21",
+     "month": {
+      "number": 12,
+      "en": "Dhū al-Ḥijjah",
+      "ar": "ذوالحجة",
+      "days": 30
+     },
+     "year": "1448",
+     "holidays": [],
+     "method": "UAQ"
+    }
+   },
+   "meta": {
+    "latitude": 51.4545,
+    "longitude": -2.5879,
+    "timezone": "Europe/London",
+    "method": {
+     "id": 2,
+     "name": "Islamic Society of North America (ISNA)"
+    },
+    "latitudeAdjustmentMethod": "ANGLE_BASED",
+    "school": "STANDARD"
+   }
+  },
+  {
+   "timings": {
+    "Fajr": "03:05 (BST)",
+    "Sunrise": "05:03 (BST)",
+    "Dhuhr": "13:08 (BST)",
+    "Asr": "17:26 (BST)",
+    "Sunset": "21:13 (BST)",
+    "Maghrib": "21:13 (BST)",
+    "Isha": "23:10 (BST)",
+    "Midnight": "01:08 (BST)"
+   },
+   "date": {
+    "readable": "28 May 2027",
+    "timestamp": "1811491261",
+    "gregorian": {
+     "date": "28-05-2027",
+     "weekday": {
+      "en": "Friday"
+     }
+    },
+    "hijri": {
+     "date": "22-12-1448",
+     "day": "22",
+     "month": {
+      "number": 12,
+      "en": "Dhū al-Ḥijjah",
+      "ar": "ذوالحجة",
+      "days": 30
+     },
+     "year": "1448",
+     "holidays": [],
+     "method": "UAQ"
+    }
+   },
+   "meta": {
+    "latitude": 51.4545,
+    "longitude": -2.5879,
+    "timezone": "Europe/London",
+    "method": {
+     "id": 2,
+     "name": "Islamic Society of North America (ISNA)"
+    },
+    "latitudeAdjustmentMethod": "ANGLE_BASED",
+    "school": "STANDARD"
+   }
+  },
+  {
+   "timings": {
+    "Fajr": "03:05 (BST)",
+    "Sunrise": "05:02 (BST)",
+    "Dhuhr": "13:08 (BST)",
+    "Asr": "17:26 (BST)",
+    "Sunset": "21:14 (BST)",
+    "Maghrib": "21:14 (BST)",
+    "Isha": "23:11 (BST)",
+    "Midnight": "01:08 (BST)"
+   },
+   "date": {
+    "readable": "29 May 2027",
+    "timestamp": "1811577661",
+    "gregorian": {
+     "date": "29-05-2027",
+     "weekday": {
+      "en": "Saturday"
+     }
+    },
+    "hijri": {
+     "date": "23-12-1448",
+     "day": "23",
+     "month": {
+      "number": 12,
+      "en": "Dhū al-Ḥijjah",
+      "ar": "ذوالحجة",
+      "days": 30
+     },
+     "year": "1448",
+     "holidays": [],
+     "method": "UAQ"
+    }
+   },
+   "meta": {
+    "latitude": 51.4545,
+    "longitude": -2.5879,
+    "timezone": "Europe/London",
+    "method": {
+     "id": 2,
+     "name": "Islamic Society of North America (ISNA)"
+    },
+    "latitudeAdjustmentMethod": "ANGLE_BASED",
+    "school": "STANDARD"
+   }
+  },
+  {
+   "timings": {
+    "Fajr": "03:05 (BST)",
+    "Sunrise": "05:01 (BST)",
+    "Dhuhr": "13:08 (BST)",
+    "Asr": "17:27 (BST)",
+    "Sunset": "21:15 (BST)",
+    "Maghrib": "21:15 (BST)",
+    "Isha": "23:12 (BST)",
+    "Midnight": "01:08 (BST)"
+   },
+   "date": {
+    "readable": "30 May 2027",
+    "timestamp": "1811664061",
+    "gregorian": {
+     "date": "30-05-2027",
+     "weekday": {
+      "en": "Sunday"
+     }
+    },
+    "hijri": {
+     "date": "24-12-1448",
+     "day": "24",
+     "month": {
+      "number": 12,
+      "en": "Dhū al-Ḥijjah",
+      "ar": "ذوالحجة",
+      "days": 30
+     },
+     "year": "1448",
+     "holidays": [],
+     "method": "UAQ"
+    }
+   },
+   "meta": {
+    "latitude": 51.4545,
+    "longitude": -2.5879,
+    "timezone": "Europe/London",
+    "method": {
+     "id": 2,
+     "name": "Islamic Society of North America (ISNA)"
+    },
+    "latitudeAdjustmentMethod": "ANGLE_BASED",
+    "school": "STANDARD"
+   }
+  },
+  {
+   "timings": {
+    "Fajr": "03:04 (BST)",
+    "Sunrise": "05:00 (BST)",
+    "Dhuhr": "13:08 (BST)",
+    "Asr": "17:27 (BST)",
+    "Sunset": "21:16 (BST)",
+    "Maghrib": "21:16 (BST)",
+    "Isha": "23:12 (BST)",
+    "Midnight": "01:08 (BST)"
+   },
+   "date": {
+    "readable": "31 May 2027",
+    "timestamp": "1811750461",
+    "gregorian": {
+     "date": "31-05-2027",
+     "weekday": {
+      "en": "Monday"
+     }
+    },
+    "hijri": {
+     "date": "25-12-1448",
+     "day": "25",
+     "month": {
+      "number": 12,
+      "en": "Dhū al-Ḥijjah",
+      "ar": "ذوالحجة",
+      "days": 30
+     },
+     "year": "1448",
+     "holidays": [],
+     "method": "UAQ"
+    }
+   },
+   "meta": {
+    "latitude": 51.4545,
+    "longitude": -2.5879,
+    "timezone": "Europe/London",
+    "method": {
+     "id": 2,
+     "name": "Islamic Society of North America (ISNA)"
+    },
+    "latitudeAdjustmentMethod": "ANGLE_BASED",
+    "school": "STANDARD"
+   }
+  }
+ ]
+}

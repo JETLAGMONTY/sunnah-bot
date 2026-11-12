@@ -1,6 +1,9 @@
 # NEVER commit your secrets — the token & chat id live in env vars on the host
+.env
 config.json
 state.json
 state.json.tmp
 __pycache__/
 *.pyc
+.venv/
+.pytest_cache/

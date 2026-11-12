@@ -20,8 +20,17 @@ database instead:
    *Session pooler* URI; it looks like
    `postgresql://postgres.xxxx:PASSWORD@aws-0-...pooler.supabase.com:5432/postgres`).
 
+The bot always encrypts this connection. To also make it check the database's
+identity, add `?sslmode=verify-full&sslrootcert=system` to the end of the address
+if your provider's certificate is publicly trusted (Neon's is; for Supabase,
+download its CA certificate from the dashboard and point `sslrootcert` at the file).
+
 Keep it handy — you'll paste it as `DATABASE_URL` below. The bot creates its one
 table by itself.
+
+Free Supabase projects **pause after about a week without activity**, and the bot
+can't start while its database is paused. Restore it from the Supabase dashboard
+if that happens.
 
 ---
 
@@ -31,7 +40,8 @@ table by itself.
 2. New repository → name it e.g. `sunnah-bot` → **Private** → Create.
 3. Upload the files from **this `bot/` folder** (you can drag-and-drop on the
    GitHub web "Add file → Upload files" page). Upload:
-   `sunnah_bot.py`, `requirements.txt`, `render.yaml`, `Dockerfile`, `.gitignore`.
+   `sunnah_bot.py`, the whole `sunnah/` folder (with `sunnah/data/`),
+   `requirements.txt`, `render.yaml`, `Dockerfile`, `.gitignore`.
    **Do NOT upload `config.json` or `state.json`** (they hold your secrets — the
    `.gitignore` already excludes them if you use git from the command line).
 
@@ -69,6 +79,15 @@ That's it — the bot now runs 24/7 for free. You can turn off your PC.
 
 ---
 
+## Upgrading from the single-file bot
+
+The bot is now the `sunnah/` package; `sunnah_bot.py` only starts it, so the
+start command stays the same. Users and their settings carry over from the
+database unchanged. The operator variables `CHAT_ID`, `CITY`, `COUNTRY`,
+`LATITUDE`, `LONGITUDE`, `PRAYER_METHOD`, `ASR_SCHOOL` and `TIMEZONE` are no
+longer read — set your own location in Telegram (`/location`) and keep
+`DATABASE_URL` so it survives redeploys. You can delete those variables.
+
 ## Updating later
 
 Change `sunnah_bot.py`, push to GitHub → Render redeploys automatically.
@@ -84,7 +103,8 @@ verification, not charged). Heavier setup:
 
 1. Create an Always Free **VM.Standard.A1.Flex** instance (Ubuntu).
 2. SSH in, install Python: `sudo apt update && sudo apt install -y python3-pip`.
-3. Copy `sunnah_bot.py` + `requirements.txt`, `pip3 install -r requirements.txt`.
+3. Copy `sunnah_bot.py`, the `sunnah/` folder and `requirements.txt`, then
+   `pip3 install -r requirements.txt`.
 4. Set env vars and run under **systemd** so it restarts automatically:
    ```ini
    # /etc/systemd/system/sunnah-bot.service

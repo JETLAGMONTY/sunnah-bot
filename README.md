@@ -15,15 +15,16 @@ method and reminders, in their own time zone.
    - BotFather replies with a **token** like `123456:ABC-DEF...`. Copy it.
 
 2. **Add the token**
-   - In this `bot` folder, copy `config.example.json` to `config.json`.
-   - Open `config.json` and paste your token into `"bot_token"`.
+   - In this `bot` folder, copy `.env.example` to `.env` and put your token after
+     `BOT_TOKEN=`. (`.env` is git-ignored. A `config.json` copied from
+     `config.example.json` also still works.)
 
 3. **Run it**
    - **Windows:** double-click **`run-bot.bat`** (it installs the requirements and starts the bot).
    - **Or any OS:**
      ```
      pip install -r requirements.txt
-     python sunnah_bot.py
+     python sunnah_bot.py        (or: python -m sunnah)
      ```
 
 4. **Activate reminders**
@@ -43,8 +44,9 @@ method and reminders, in their own time zone.
 | `/method [n]` | See or choose the calculation method (`/method 0` = automatic) |
 | `/asr standard` / `/asr hanafi` | How Asr is calculated |
 | `/adjust <prayer> <±min>` | Match your mosque's timetable, e.g. `/adjust maghrib +3` |
+| `/azkar` | The full morning or evening adhkar (`/azkar evening`) |
 | `/today` | The full Sunnah checklist |
-| `/hadith` | A hadith from Nawawi's Forty |
+| `/hadith [n]` | A hadith from Nawawi's Forty, or number n (1–42) |
 | `/friday` | The Jumu'ah Sunnah acts |
 | `/fasting` | Recommended fasting days (incl. today's occasion) |
 | `/dua` | A prophetic supplication |
@@ -61,10 +63,17 @@ translated. Switch anytime with `/language`, or set the default with the `LANG` 
 ### Automatic reminders
 
 - **Every prayer time** + **morning/evening adhkar** + a **daily Sunnah tip**
-- **Hadith of the day** (08:00) — cycles through Nawawi's Forty
+- **Hadith of the day** (08:00) — cycles through all 42 of Nawawi's Forty
 - **Jumu'ah pack** every Friday (09:30) — Al-Kahf, ghusl, salawat, last-hour du'a
 - **Last hour before Maghrib on Friday** — du'a reminder
-- **Fasting nudges** (evening) — Mon/Thu, the 3 White Days, Ashura, Arafah, six of Shawwal
+- **Occasions of the Hijri calendar** (08:00) — the White Days, Ashura, the first ten
+  days of Dhul Hijjah, Arafah, Eid, the days of Tashreeq (not for fasting), Ramadan
+- **Fasting nudges** (evening) — Mon/Thu, the 3 White Days, Ashura, Arafah, the eve of
+  Ramadan and of Eid al-Fitr (Zakat al-Fitr). None during Ramadan, on Eid or Tashreeq.
+- **Odd nights of the last ten** of Ramadan — a Laylat al-Qadr reminder at Maghrib
+
+A reminder is sent at its time, or up to 10 minutes late if the bot was
+restarting; after that it's skipped rather than sent stale.
 
 ## Keeping it running 24/7
 
@@ -95,12 +104,14 @@ free Postgres database (e.g. [Supabase](https://supabase.com) or
   or messages.
 - Reminders use **each person's local time**, detected automatically from the
   prayer-times API — so a cloud host running on UTC still reminds everyone on time.
-- **Your own settings on a host (optional):** set `CHAT_ID` (your Telegram chat id)
-  plus any of `CITY`, `COUNTRY`, `LATITUDE`, `LONGITUDE`, `PRAYER_METHOD`,
-  `ASR_SCHOOL` (`standard` / `hanafi`) and `TIMEZONE`, and they're re-applied on
-  every start, even if the disk was wiped.
-- Run the tests with `python test_sunnah_bot.py`.
-- Prayer times come from the free [Aladhan API](https://aladhan.com/prayer-times-api).
+- **Tests:** `pip install -r requirements-dev.txt`, then `python -m pytest`. They
+  run against recorded API replies in `tests/fixtures/` — no network, no token.
+- **Try it offline:** `python tests/console.py --now 2026-09-04T12:00+01:00 "/city Bristol" "/times" "@2026-09-04T18:50+01:00"`
+  talks to the real bot code with fixture data (`@<time>` moves the clock and runs
+  the reminders). Run it without steps for an interactive prompt.
+- Prayer times come from the free [Aladhan API](https://aladhan.com/prayer-times-api),
+  one monthly calendar per place, shared by everyone there. Typed cities are
+  looked up once with the free [Open-Meteo geocoder](https://open-meteo.com/en/docs/geocoding-api).
   **For the most accurate times:**
   1. Share your location with `/location` (exact coordinates beat a city name).
   2. The bot picks the authority your country's mosques follow (e.g. Moonsighting

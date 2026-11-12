@@ -1,0 +1,1 @@
+"""Sunnah Companion Telegram bot."""

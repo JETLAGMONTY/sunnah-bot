@@ -1,7 +1,13 @@
+.env
 config.json
 state.json
+state.json.tmp
 __pycache__/
 *.pyc
+.venv/
+.pytest_cache/
+.git/
+tests/
 README.md
 DEPLOY.md
 run-bot.bat
